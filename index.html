@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <style>
+        .card-container {
+            width: 300px;
+            height: 500px;
+            background: #0b0b0b;
+            border: 1px solid #2699FB;
+            border-radius: 10px;
+            opacity: 1;
+            margin-right: auto;
+            margin-left: auto;
+            border-left: 0;
+        }
+        #list{
+            font-size: 30px;
+            color: #506c86;
+            font-family: 'Odibee Sans', cursive;
+        }
+ 
+        .icon-circle {
+            background: white;
+            border-radius: 200px;
+            height: 70px;
+            font-weight: bold;
+            width: 70px;
+            display: table;
+            margin-top: 12px;
+            margin-left: 31px;
+        }
+ 
+        .bloc {
+            text-align: center;
+            margin-top: 12px;
+            margin-left: 28px;
+        }
+ 
+        .task-count {
+            font-size: 30px;
+            margin-top: 5%;
+            text-align: center;
+           
+        }
+        #taskCount{
+            color: #2699FB !important;
+
+        }
+ 
+        .task-card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50vw;
+            height: 50vh;
+            border: 1px solid #FFFFFF;
+            background: #FFFFFF;
+            border-radius: 25px 25px 10px 10px;
+            opacity: 1;
+            position: relative;
+        }
+ 
+        .fab {
+            background: #2699FB;
+            border-radius: 200px;
+            height: 70px;
+            width: 70px;
+            font-weight: bold;
+            border: 0;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin-right: 27px;
+            margin-bottom: 31px;
+        }
+ 
+        .add-task-container {
+            text-align: center;
+            top: 10vh;
+            left:15vw;
+            width: 300px;
+            height: 187px;
+            background: #FFFFFF;
+            opacity: 1;
+            position: absolute;
+            justify-content: center;
+        }
+ 
+        .task-done {
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+    <title>Todo ETH APP</title>
+</head>
+ 
+<body style="background: black">
+    <div class=" my-5 border-left-0">
+       
+        <h2 class="bloc text-white"><strong>TODO-ETH</strong></h1>
+            <p id="taskCount" class="task-count text-white">0 Task</p>
+ 
+            <div class="task-card">
+
+                <button id="fab" class="fab float-right" data-toggle="modal" data-target="#add-task-container">
+                    <img clas="m-auto" src="plus.png"
+                        alt="" height="16" width="16">
+                </button>
+              
+                <ul id="list" class="list-group mt-3">
+                </ul>
+ 
+                <div id="add-task-container" tabindex="-1" class="modal add-task-container">
+                    <form id="add-task-form" class="needs-validation" novalidate>
+                        <div class="container">
+                            <div class="col mx-2">
+                                <h5 class="text-primary text-center mt-4">New Task</h5>
+                                <input id="new-task" class="mt-3 form-control text-center" type="text"
+                                    placeholder="Task" maxlength="15" autofocus required>
+                                <div class="invalid-feedback">
+                                    Cannot have a empty task
+                                </div>
+                                <button type="submit" data-dismiss="modal" class="btn btn-primary btn-block mt-3"
+                                    onclick="addTask(document.getElementById('new-task').value);">Add
+                                    Task</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> 
+ 
+            </div>
+    </div>
+ 
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+    <script src="config.js"></script>
+    <script src="getAccount.js"></script>
+    <script src="app.js"></script>
+</body>
+ 
+</html>
